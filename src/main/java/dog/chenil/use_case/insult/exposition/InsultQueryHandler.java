@@ -1,6 +1,6 @@
-package dog.chenil.use_case.insulte.exposition;
+package dog.chenil.use_case.insult.exposition;
 
-import dog.chenil.use_case.insulte.domain.InsultRepository;
+import dog.chenil.use_case.insult.domain.InsultRepository;
 
 public class InsultQueryHandler {
   private final InsultRepository insulteRepositry;

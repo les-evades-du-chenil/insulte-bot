@@ -1,11 +1,14 @@
-package dog.chenil.use_case.insulte.mock;
+package dog.chenil.use_case.insult.mock;
 
 import java.util.ArrayList;
 
 import java.util.List;
-import dog.chenil.use_case.insulte.domain.InsultRepository;
 
-public class InMemoryInsulteRepository implements InsultRepository {
+import dog.chenil.kernel.Repository;
+import dog.chenil.use_case.insult.domain.InsultRepository;
+
+@Repository
+public class InMemoryInsultRepository implements InsultRepository {
 
   private List<String> insults = new ArrayList<>();
   private int index = 0;

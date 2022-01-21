@@ -1,9 +1,9 @@
-package dog.chenil.use_case.insulte.exposition;
+package dog.chenil.use_case.insult.exposition;
 
 import java.time.ZonedDateTime;
 import java.util.Objects;
 
-import dog.chenil.use_case.insulte.domain.User;
+import dog.chenil.use_case.insult.domain.User;
 
 public class InsultQuery {
   User cible;

@@ -1,25 +1,25 @@
-package dog.chenil.use_case.insulte.domain;
+package dog.chenil.use_case.insult.domain;
 
 import java.util.Objects;
 import java.util.UUID;
 
-public class InsulteId {
+public class InsultId {
   private final UUID id;
 
-  private InsulteId(UUID id) {
+  private InsultId(UUID id) {
     this.id = Objects.requireNonNull(id);
   }
 
-  public static InsulteId of(UUID id) {
-    return new InsulteId(id);
+  public static InsultId of(UUID id) {
+    return new InsultId(id);
   }
 
-  public static InsulteId of(String id) throws IllegalArgumentException {
-    return new InsulteId(UUID.fromString(id));
+  public static InsultId of(String id) throws IllegalArgumentException {
+    return new InsultId(UUID.fromString(id));
   }
 
-  public static InsulteId generate() {
-    return new InsulteId(UUID.randomUUID());
+  public static InsultId generate() {
+    return new InsultId(UUID.randomUUID());
   }
 
   public UUID getId() {
@@ -35,7 +35,7 @@ public class InsulteId {
   public boolean equals(Object obj) {
     if (obj == null || getClass() != obj.getClass())
       return false;
-    InsulteId other = (InsulteId) obj;
+    InsultId other = (InsultId) obj;
     return id.equals(other.id);
   }
 

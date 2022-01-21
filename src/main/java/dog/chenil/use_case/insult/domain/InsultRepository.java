@@ -1,4 +1,4 @@
-package dog.chenil.use_case.insulte.domain;
+package dog.chenil.use_case.insult.domain;
 
 public interface InsultRepository {
 

@@ -1,24 +1,24 @@
-package dog.chenil.use_case.insulte.exposition;
+package dog.chenil.use_case.insult.exposition;
 
 import java.time.ZonedDateTime;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import dog.chenil.use_case.insulte.domain.InsultRepository;
-import dog.chenil.use_case.insulte.domain.User;
-import dog.chenil.use_case.insulte.mock.InMemoryInsulteRepository;
+import dog.chenil.use_case.insult.domain.InsultRepository;
+import dog.chenil.use_case.insult.domain.User;
+import dog.chenil.use_case.insult.mock.InMemoryInsultRepository;
 
-class InsulteQueryTest {
+class InsultQueryTest {
   private final User swann;
   private final User gengu;
   private final InsultQueryHandler queryHandler;
   private final InsultRepository insultRepository;
 
-  InsulteQueryTest() {
+  InsultQueryTest() {
     swann = User.of("swann");
     gengu = User.of("gengu");
-    insultRepository = new InMemoryInsulteRepository();
+    insultRepository = new InMemoryInsultRepository();
     queryHandler = new InsultQueryHandler(insultRepository);
   }
 
