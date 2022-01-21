@@ -15,9 +15,13 @@ public class App {
   @Inject
   private ConfigDiscord configDiscord;
 
-  void onStart(@Observes StartupEvent ev) throws LoginException {
-    JDABuilder.createDefault(configDiscord.token())
-        .setActivity(Activity.watching("!test"))
-        .setStatus(OnlineStatus.ONLINE).build();
+  void onStart(@Observes StartupEvent ev) {
+    try {
+      JDABuilder.createDefault(configDiscord.token())
+          .setActivity(Activity.watching("!test"))
+          .setStatus(OnlineStatus.ONLINE).build();
+    } catch (LoginException e) {
+      // maybe in test
+    }
   }
 }
