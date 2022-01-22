@@ -9,7 +9,7 @@ public class InsultQueryHandler {
     this.insulteRepositry = insulteRepositry;
   }
 
-  InsultResponse handle(InsultQuery command) {
+  public InsultResponse handle(InsultQuery command) {
     String insultBody = insulteRepositry.findInsultRandomly();
     return new InsultResponse("@" + command.cible.getFirstname() + " " + insultBody, command.cible);
   }

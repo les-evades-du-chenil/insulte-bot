@@ -16,8 +16,8 @@ class InsultQueryTest {
   private final InsultRepository insultRepository;
 
   InsultQueryTest() {
-    swann = User.of("swann");
-    gengu = User.of("gengu");
+    swann = User.of("swann", "zzz", "targamas");
+    gengu = User.of("gengu", "zzz", "targamas");
     insultRepository = new InMemoryInsultRepository();
     queryHandler = new InsultQueryHandler(insultRepository);
   }
