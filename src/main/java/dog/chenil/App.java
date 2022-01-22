@@ -13,7 +13,7 @@ import net.dv8tion.jda.api.entities.Activity;
 @ApplicationScoped
 public class App {
   @Inject
-  private ConfigDiscord configDiscord;
+  ConfigDiscord configDiscord;
 
   void onStart(@Observes StartupEvent ev) {
     try {
