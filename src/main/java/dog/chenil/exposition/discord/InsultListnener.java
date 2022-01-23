@@ -7,7 +7,6 @@ import dog.chenil.use_case.insult.exposition.InsultQuery;
 import dog.chenil.use_case.insult.exposition.InsultQueryHandler;
 import net.dv8tion.jda.api.MessageBuilder;
 import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
