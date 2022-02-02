@@ -2,7 +2,7 @@ package dog.chenil.use_case.insult.exposition;
 
 import dog.chenil.use_case.insult.domain.InsultRepository;
 
-public class InsultQueryHandler {
+public final class InsultQueryHandler {
   private final InsultRepository insulteRepositry;
 
   public InsultQueryHandler(InsultRepository insulteRepositry) {

@@ -12,7 +12,7 @@ import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class InsultListnener extends ListenerAdapter {
+public final class InsultListnener extends ListenerAdapter {
   private final InsultQueryHandler insultHandler;
   private final UserMapper userMapper;
 
@@ -30,12 +30,13 @@ public class InsultListnener extends ListenerAdapter {
   public void onMessageReceived(MessageReceivedEvent event) {
     var message = event.getMessage();
     var author = userMapper.mapDiscordUserToDomainUser(event.getAuthor());
+    System.out.println(message.getContentRaw());
     if (!message.getContentRaw().contains("insulte")) {
       return;
     }
     for (Member user : message.getMentionedMembers()) {
-      var cible = userMapper.mapDiscordUserToDomainUser(event.getAuthor());
-      var insult = insultHandler.handle(new InsultQuery(author, cible, ZonedDateTime.now()));
+      var cible = userMapper.mapDiscordUserToDomainUser(event.getAuthor());// TODO switch to make user mentionned
+      var insult = insultHandler.handle(new InsultQuery(cible, author, ZonedDateTime.now()));
       MessageChannel channel = event.getChannel();
       var messageBuilder = new MessageBuilder();
       messageBuilder.mentionUsers(user.getAsMention());

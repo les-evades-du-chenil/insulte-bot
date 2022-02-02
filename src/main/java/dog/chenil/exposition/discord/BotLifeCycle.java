@@ -11,7 +11,7 @@ import net.dv8tion.jda.api.events.ResumedEvent;
 import net.dv8tion.jda.api.events.StatusChangeEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-public class BotLifeCycle extends ListenerAdapter {
+public final class BotLifeCycle extends ListenerAdapter {
   private final Logger logger;
 
   public BotLifeCycle(Logger logger) {

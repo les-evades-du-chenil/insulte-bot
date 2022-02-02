@@ -4,6 +4,6 @@ public interface InsultRepository {
 
   String findInsultRandomly();
 
-  void add(String string);
+  void add(String insult);
 
 }

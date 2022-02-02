@@ -2,7 +2,7 @@ package dog.chenil.use_case.insult.domain;
 
 import java.util.Objects;
 
-public class DiscordId {
+public final class DiscordId {
   public final String id;
 
   public DiscordId(String id) {

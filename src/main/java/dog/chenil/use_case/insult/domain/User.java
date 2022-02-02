@@ -2,7 +2,7 @@ package dog.chenil.use_case.insult.domain;
 
 import java.util.Objects;
 
-public class User {
+public final class User {
   private final String firstname;
   private final DiscordId discordId;
   private final DiscordPseudo discordPseudo;

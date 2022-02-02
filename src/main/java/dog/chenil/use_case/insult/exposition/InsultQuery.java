@@ -5,7 +5,7 @@ import java.util.Objects;
 
 import dog.chenil.use_case.insult.domain.User;
 
-public class InsultQuery {
+public final class InsultQuery {
   User cible;
   User author;
   ZonedDateTime occurenceDate;

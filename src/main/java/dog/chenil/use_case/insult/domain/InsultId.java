@@ -3,7 +3,7 @@ package dog.chenil.use_case.insult.domain;
 import java.util.Objects;
 import java.util.UUID;
 
-public class InsultId {
+public final class InsultId {
   private final UUID id;
 
   private InsultId(UUID id) {

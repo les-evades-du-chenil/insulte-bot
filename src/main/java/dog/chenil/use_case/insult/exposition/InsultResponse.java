@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import dog.chenil.use_case.insult.domain.User;
 
-public class InsultResponse {
+public final class InsultResponse {
   public final String textResponse;
   public final User userCible;
 
