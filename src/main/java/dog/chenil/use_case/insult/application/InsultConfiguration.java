@@ -1,6 +1,7 @@
 package dog.chenil.use_case.insult.application;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.Dependent;
+import javax.enterprise.inject.Produces;
 
 import dog.chenil.exposition.discord.InsultListnener;
 import dog.chenil.exposition.web.InsultController;
@@ -11,39 +12,39 @@ import dog.chenil.use_case.insult.exposition.InsultUseCase;
 import dog.chenil.use_case.insult.infrastructure.RedisInsultRepository;
 import io.quarkus.redis.client.RedisClient;
 
-@ApplicationScoped
+@Dependent
 public class InsultConfiguration {
-  @ApplicationScoped
+  @Produces
   public InsultUseCase insultUseCase() {
     return new InsultCommandHandler(insultRepository());
   }
 
-  @ApplicationScoped
+  @Produces
   public InsultRepository insultRepository() {
     return new RedisInsultRepository(redisClient());
   }
 
-  @ApplicationScoped
+  @Produces
   public RedisClient redisClient() {
     return RedisClient.createClient();
   }
 
-  @ApplicationScoped
+  @Produces
   public InsultQueryHandler insultQueryHandler() {
     return new InsultQueryHandler(insultRepository());
   }
 
-  @ApplicationScoped
+  @Produces
   public InsultListnener insultListnener() {
     return new InsultListnener(insultQueryHandler(), userMapper());
   }
 
-  @ApplicationScoped
+  @Produces
   private UserMapper userMapper() {
     return new UserMapper();
   }
 
-  @ApplicationScoped
+  @Produces
   public InsultController insultController() {
     return new InsultController(insultUseCase());
   }
